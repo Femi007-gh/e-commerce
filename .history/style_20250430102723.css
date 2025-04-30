@@ -316,8 +316,8 @@ body{
   margin-bottom: -20px;
   position: absolute;
   margin-top: auto;
-  width: 100vw;        
-  margin: 0;        
+  width: 100vw;         /* Full viewport width *
+  margin: 0;            /* No margin */
   padding: 0;           
 }
 

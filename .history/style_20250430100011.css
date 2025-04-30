@@ -3,10 +3,6 @@ body{
   cursor: pointer;
   margin: 0;
   padding: 0;
-    min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
 }
 .div1{
   background-color: #595959;
@@ -310,15 +306,11 @@ body{
   padding: 30px 20px;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 95%;
+  width: 98%;
   margin-left: -8px;
   height: 50%;
   margin-bottom: -20px;
   position: absolute;
-  margin-top: auto;
-  width: 100vw;        
-  margin: 0;        
-  padding: 0;           
 }
 
 .footer-top {

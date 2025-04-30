@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .cart {
+      flex: 1;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .cart h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item .item-name {
+      flex: 1;
+    }
+
+    .cart-item .quantity-controls {
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-item button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin: 0 5px;
+    }
+
+    .cart-item button:hover {
+      background-color: #218838;
+    }
+
+    .cart-total {
+      margin-top: 20px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    @media (max-width: 600px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item .quantity-controls {
+        margin-top: 10px;
+      }
+
+      .cart-total {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <div class="cart-item">
+      <div class="item-name">Item 1</div>
+      <div class="quantity-controls">
+        <button onclick="changeQuantity(0, -1)">−</button>
+        <span id="quantity-0">1</span>
+        <button onclick="changeQuantity(0, 1)">+</button>
+      </div>
+      <div class="item-price" id="price-0" data-price="10">$10</div>
+    </div>
+    <div class="cart-item">
+      <div class="item-name">Item 2</div>
+      <div class="quantity-controls">
+        <button onclick="changeQuantity(1, -1)">−</button>
+        <span id="quantity-1">1</span>
+        <button onclick="changeQuantity(1, 1)">+</button>
+      </div>
+      <div class="item-price" id="price-1" data-price="20">$20</div>
+    </div>
+    <div class="cart-total">Total: $<span id="total">30</span></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Your Shop. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const quantities = [1, 1];
+    const prices = [10, 20];
+
+    function changeQuantity(index, delta) {
+      if (quantities[index] + delta >= 1) {
+        quantities[index] += delta;
+        document.getElementById(`quantity-${index}`).textContent = quantities[index];
+        document.getElementById(`price-${index}`).textContent = `$${quantities[index] * prices[index]}`;
+        updateTotal();
+      }
+    }
+
+    function updateTotal() {
+      const total = quantities.reduce((sum, qty, i) => sum + qty * prices[i], 0);
+      document.getElementById('total').textContent = total;
+    }
+  </script>
+</body>
+</html>

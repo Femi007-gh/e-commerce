@@ -6,8 +6,8 @@ body{
     min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
 
+}
 .div1{
   background-color: #595959;
   width: 101%;

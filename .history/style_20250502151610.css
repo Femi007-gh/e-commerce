@@ -1,0 +1,88 @@
+/* Make page take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+/* Main content pushes footer down */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  background: #134F4D;
+  padding: 30px 20px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  flex: 1;
+}
+
+.footer-links, .footer-about, .footer-contact {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links ul, .footer-about ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.footer-links a, .footer-about a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.footer-contact p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+}
+
+h4 {
+  color: white;
+  font-size: 24px;
+}
+
+.fa-solid {
+  margin-left: 20px;
+}
+
+.a {
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.fa-brands {
+  color: white;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
